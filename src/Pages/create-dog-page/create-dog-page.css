@@ -1,0 +1,19 @@
+.createPetPage {
+    display: flex;
+    flex-direction: column;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+    margin-top: 30px;
+}
+
+.link:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.create-dog-page-title {
+    font-size: 46px;
+}

@@ -1,0 +1,55 @@
+.script {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, .5);
+    padding: 20px;
+    border-radius: 25px;
+    width: 280px;
+    margin: 10px;
+}
+
+.script-title-negative {
+    color: red;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.script-title-realistik {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.script-title-positive {
+    color: green;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.script-yields {
+    margin-bottom: 7px;
+}
+
+.script-income-negative {
+    color: red;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.script-income-realistik {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.script-income-positive {
+    color: green;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.script-description {
+    font-size: 12px;
+    color: gray;
+}

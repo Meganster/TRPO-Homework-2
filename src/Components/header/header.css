@@ -1,0 +1,29 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;	
+	margin: 0px 15px;
+	height: 120px;	
+	font-family: 'Roboto';
+	border-bottom: 1px solid rgba(255, 255, 255, .1);
+	border-bottom: 2px solid red;
+}
+
+.project-name { 
+	font-weight: 600;
+	font-size: 38px;
+	color: black;
+}
+
+.header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 98%;
+	margin-bottom: 50px;
+}
+
+.btn-lk {
+	margin-right: 20px;
+}

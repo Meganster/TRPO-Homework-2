@@ -1,0 +1,31 @@
+.dog-preview {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid red;
+}
+
+.dog-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 38px;
+}
+
+.dog-about {
+    display: flex;
+    flex-direction: row;
+}
+
+.dog-description {
+    font-size: 28px;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+}
+
+.link:hover {
+    text-decoration: none;
+    color: black;
+}

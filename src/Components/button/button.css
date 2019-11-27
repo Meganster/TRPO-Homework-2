@@ -1,0 +1,20 @@
+.button-red {
+    padding: 2rem 3rem;
+    color: black;
+    background-color: #DC143C;
+    border-color: #DC143C;
+    border-radius: 1.875rem;
+    font-family: 'Roboto';
+    font-size: 27px;
+}
+
+.button-red:hover {
+    background-color: #DC143C;
+    cursor: pointer;
+}
+
+
+.button-red:active {
+    opacity: 0.8;
+}
+
