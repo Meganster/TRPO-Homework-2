@@ -1,18 +1,28 @@
-import { DogMapper } from "../DataMappers/dog-mapper";
+import { Dog } from "../DataHelpers/dog";
+import {DogMapper} from "../DataMappers/dog";
 import { filterObject } from './utils';
 export class FeedDomain {
-    static getAllDogsFilter(sex) {
-        return DogMapper.getAll().then((dogs) => filterObject(dogs, (d) => {
+    constructor(id) {
+        this.dog = Dog.get(id => DogMapper.fromDto(id));
+        this.allDogs = Dog.getAll().then(dogs => ({keys: Object.keys(DogMapper.fromDto(dogs) || {}), dogs: DogMapper.fromDto(dogs) || {}}));
+    }
+    getAllDogsFilter(sex) {
+        return Dog.getAll().then((dogs) => filterObject(DogMapper.fromDto(dogs), (d) => {
             if (!sex) {
                 return true;
             }
             return d.sex === sex;
         }));
     }
-    static getAllDogs() {
-        return DogMapper.getAll().then(dogs => ({keys: Object.keys(dogs || {}), dogs: dogs || {}}));
+    getAllDogs() {
+        return this.allDogs;
     }
-    static getDog(id) {
-        return DogMapper.get(id);
+    getDog() {
+        return this.dog;
+    }
+
+    update() {
+        this.dog = Dog.get(id => DogMapper.fromDto(id));
+        this.allDogs = Dog.getAll().then(dogs => ({keys: Object.keys(DogMapper.fromDto(dogs) || {}), dogs: DogMapper.fromDto(dogs) || {}}));
     }
 }

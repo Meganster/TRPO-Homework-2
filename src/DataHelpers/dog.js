@@ -1,6 +1,6 @@
 import { database } from '../config/Fire.js';
 
-export class DogMapper {
+export class Dog {
     static get(id) {
         return database.ref('megangster/dog/' + id).once('value').then(data => data.val());
     }

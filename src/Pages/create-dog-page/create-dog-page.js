@@ -66,7 +66,11 @@ class CreateDogPage extends React.Component {
                 />
                 <div className='link'>
                     <Link to={`/main`}>
-                        <Button type='red' text='СОЗДАТЬ' onClick={() => CreateDogDomain.createDog(this.state)}/>
+                        <Button type='red' text='СОЗДАТЬ' onClick={() => {
+                            const createDogDomain = CreateDogDomain();
+                            createDogDomain.createDog(this.dog);
+                            createDogDomain.update();
+                        }}/>
                     </Link>
                 </div>
             </div>

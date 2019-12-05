@@ -12,7 +12,8 @@ class DogPage extends React.Component {
         }
     };
     componentDidMount() {
-        FeedDomain.getDog(this.props.id).then(dog => this.setState({ dog }))
+        const feedDomain = new FeedDomain(this.props.id);
+        FeedDomain.getDog().then(dog => this.setState({ dog }))
     }
 
     render() {

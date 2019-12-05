@@ -1,9 +1,14 @@
-import { DogMapper } from "../DataMappers/dog-mapper";
+import { Dog } from "../DataHelpers/dog";
+import {DogMapper} from "../DataMappers/dog";
+
 export class AdminDomain {
-    static deleteDog(id) {
-        return DogMapper.delete(id)
+    constructor(id) {
+        this.dog =  Dog.get(...DogMapper.fromDto({id}));
     }
-    static getAllDogs() {
-        return DogMapper.getAll();
+    deleteDog() {
+        this.dog = null;
+    }
+    update() {
+        this.dog =  Dog.get(...DogMapper.fromDto(this.dog));
     }
 }

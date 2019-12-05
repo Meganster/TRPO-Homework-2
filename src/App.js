@@ -31,7 +31,8 @@ class App extends React.Component {
   login = (user) => {
     database.ref('users/' + user.uid).once('value').then((snap) => this.setState({ results: snap.val() }));
     this.setState({ user });
-    user && AuthDomain.isAdmin(user.uid).then(isAdmin => this.setState({isAdmin}));
+    const authDomain  = new AuthDomain(user.uid);
+    user && authDomain.isAdmin().then(isAdmin => this.setState({isAdmin}));
   }
 
   render() {

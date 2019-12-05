@@ -1,6 +1,14 @@
-import { DogMapper } from "../DataMappers/dog-mapper";
+import { Dog } from "../DataHelpers/dog";
+import {DogMapper} from "../DataMappers/dog";
+
 export class CreateDogDomain {
-    static createDog(dog) {
-        return DogMapper.create(dog);
+    constructor() {
+        this.dog = null;
+    }
+    createDog(dog) {
+        this.dog = dog;
+    }
+    update() {
+        Dog.create(DogMapper.toDto(this.dog));
     }
 }

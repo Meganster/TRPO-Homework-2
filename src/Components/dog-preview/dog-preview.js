@@ -35,7 +35,13 @@ class DogPreview extends React.Component {
                         {description}
                     </div>
                 </Link>
-                {isAdmin && <Button type='red' text='УДАЛИТЬ' onClick={() => { AdminDomain.deleteDog(id); handleChange()}} />}
+                {isAdmin && <Button type='red' text='УДАЛИТЬ' onClick={() => {
+                    const adminDomain = new AdminDomain(id)
+                    adminDomain.deleteDog();
+                    handleChange();
+                    AdminDomain.update();
+                }
+                } />}
             </div>
 
         );
